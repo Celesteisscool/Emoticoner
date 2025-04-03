@@ -1,0 +1,111 @@
+body {
+    background-color: black;
+    color: white;
+    font-family:'Courier New', Courier, monospace ;
+
+}
+
+.header {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+#help {
+    margin: auto;
+    text-align: center;
+    color: lightgray;
+    padding-top: 0px;
+}
+
+#content {
+    flex-wrap: wrap; 
+}
+
+.search {
+    margin: auto;
+    display: flex;
+    padding-top: 0px;
+}
+
+.search input[type=text] {
+    padding: 1px;
+    border: solid;
+    border-radius: 10px;
+    border-color: white;
+    background-color: black;
+    color: white;
+
+    font-size: 17px;
+    margin: auto;
+    text-align: center;
+}
+
+.content {
+    margin:100vh;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.emoticon {
+    margin: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border-radius: 10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: gray;
+
+    background-color: black;
+    color: white;
+    
+    transition-property: border-color;
+    transition-duration: 0.125s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+
+}
+
+.emoticon:hover {
+    border-color: white;
+}
+
+.emoticon:active {
+    border-color: gray;
+}
+
+
+
+:root {
+    --happy: flex;
+    --sad: flex;
+    --evil: flex;
+    --chicken: flex;
+    --silly: flex;
+    --shocked: flex;
+    --dull: flex;
+    --wink: flex;
+
+    --tags: none;
+    --help: none;
+
+    flex-wrap: wrap;    
+}
+
+.evil {display: var(--evil)}
+.happy {display: var(--happy)}
+.sad {display: var(--sad)}
+.chicken {display: var(--chicken)}
+.silly {display: var(--silly)}
+.shocked {display: var(--shocked)}
+.dull {display: var(--dull)}
+.wink {display: var(--wink)}
+
+
+
+.tags {display: var(--tags)}
+.help {display: var(--help)}
