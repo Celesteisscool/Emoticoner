@@ -106,9 +106,11 @@ body {
 }
 
 .emoticon:hover {
+    transition: border-color 0.125s ease-in-out;
     border-color: var(--text);
 }
 
 .emoticon:active {
+    transition: border-color 0.125s ease-in-out;
     border-color: var(--active);
 }
