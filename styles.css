@@ -19,6 +19,9 @@
     --help: none;
 
     flex-wrap: wrap;    
+
+    --zoom: 1;
+    zoom: var(--zoom);
 }
 
 .evil {display: var(--evil)}

@@ -4,6 +4,9 @@ alliasList = ["flip", "joyful", "thebigsad"];
 helpList = ["tags",  "help"];
 commandList = ["light",  "dark"];
 
+r = document.querySelector(':root');
+
+
 function headerEmoticon(input) {
     const emojis = [];
     emojis.push(":)", ":(", ">:(", ">:)", ":D", "D:");
@@ -90,7 +93,6 @@ function search() {
 
 
 function runCommand(input) {
-    var r = document.querySelector(':root');
     if (input == commandList[0]) { // Light mode
         r.style.setProperty("--text", "black");
         r.style.setProperty("--background", "white");
@@ -108,7 +110,6 @@ function runCommand(input) {
 }
 
 function hidetheones() {
-    var r = document.querySelector(':root'); // Get the root element
     if (useableTags.length != 0) {
         for (var i = 0; i < tagList.length; i++) {
             if (useableTags.includes(tagList[i])) {
@@ -141,3 +142,11 @@ function hidetheones() {
         }
     }
 }
+
+
+window.addEventListener('resize', function(event) {
+    zoom = window.innerHeight / window.innerWidth;
+    zoom *= 2;
+    console.log(zoom);
+    r.style.setProperty("--zoom", zoom )
+});

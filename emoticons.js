@@ -32,5 +32,5 @@ function setupAllEmojis() {
     addEmoticon(";D", "wink");
 
     addEmoticon("(╯°□°)╯︵ ┻━┻", "table");
-    addEmoticon("(╯°Д°）╯︵ /(.□ . \\)", "table");
+    addEmoticon("(╯°Д°）╯︵ /(.□ . /)", "table");
 }
