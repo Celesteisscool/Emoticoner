@@ -30,4 +30,7 @@ function setupAllEmojis() {
     addEmoticon(";P", "wink");
     addEmoticon(";)", "wink");
     addEmoticon(";D", "wink");
+
+    addEmoticon("(╯°□°)╯︵ ┻━┻", "table");
+    addEmoticon("(╯°Д°）╯︵ /(.□ . \\)", "table");
 }

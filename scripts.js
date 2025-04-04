@@ -1,4 +1,6 @@
-tagList = ["happy", "sad", "chicken", "evil", "silly", "shocked", "dull", "wink"];
+tagList = ["happy", "sad", "chicken", "evil", "silly", "shocked", "dull", "wink", "table"];
+alliasReplacement = [["flip", "table"], ["joyful", "happy"], ["thebigsad", "sad"]];
+alliasList = ["flip", "joyful", "thebigsad"];
 helpList = ["tags",  "help"];
 commandList = ["light",  "dark"];
 
@@ -74,13 +76,12 @@ function search() {
     useableTags = [];
     for (var i = 0; i < input.length; i++) {
         input[i] = input[i].toLowerCase();
-        if (tagList.includes(input[i]) || helpList.includes(input[i])) {
+        if (tagList.includes(input[i]) || helpList.includes(input[i]) || alliasList.includes(input[i])) {
             useableTags.push(input[i]);
         }
         if (commandList.includes(input[i])) {
             runCommand(input[i]);
             break;
-
         }
     }
     hidetheones();
@@ -116,6 +117,13 @@ function hidetheones() {
                 r.style.setProperty("--"+ tagList[i], "none");
             }
         }
+
+        for (var i = 0; i < alliasReplacement.length; i++) {
+            if (useableTags.includes(alliasReplacement[i][0])) {
+                r.style.setProperty("--"+ alliasReplacement[i][1], "flex");
+            }
+        }
+
         for (var i = 0; i < helpList.length; i++) {
             if (useableTags.includes(helpList[i])) {
                 r.style.setProperty("--"+ helpList[i], "flex");

@@ -1,8 +1,9 @@
 :root {
-    --text: white;
-    --background: black;
-    --active: gray;
-    --sub: lightgray;
+    color-scheme: light dark;
+    --text: light-dark(black, white);
+    --background: light-dark(white, black);
+    --active: light-dark(gray, gray);
+    --sub: light-dark(black, lightgray);
 
     --happy: flex;
     --sad: flex;
@@ -12,6 +13,7 @@
     --shocked: flex;
     --dull: flex;
     --wink: flex;
+    --table: flex;
 
     --tags: none;
     --help: none;
@@ -27,6 +29,7 @@
 .shocked {display: var(--shocked)}
 .dull {display: var(--dull)}
 .wink {display: var(--wink)}
+.table {display: var(--table)}
 
 .tags {display: var(--tags)}
 .help {display: var(--help)}
