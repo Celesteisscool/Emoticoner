@@ -145,8 +145,16 @@ function hidetheones() {
 
 
 window.addEventListener('resize', function(event) {
-    zoom = window.innerHeight / window.innerWidth;
-    zoom *= 2;
+    size = window.innerWidth / window.innerHeight;
+    if (size < 1 ) {
+        zoom = 2;
+    } 
+    if (size < 0.5) {
+        zoom = 3;
+    }
+    if (size >= 1) {
+        zoom = 1;
+    }
     console.log(zoom);
     r.style.setProperty("--zoom", zoom )
 });
