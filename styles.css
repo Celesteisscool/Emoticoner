@@ -1,86 +1,9 @@
-body {
-    background-color: black;
-    color: white;
-    font-family:'Courier New', Courier, monospace ;
-
-}
-
-.header {
-    margin: auto;
-    text-align: center;
-    margin-bottom: 0px;
-}
-
-#help {
-    margin: auto;
-    text-align: center;
-    color: lightgray;
-    padding-top: 0px;
-}
-
-#content {
-    flex-wrap: wrap; 
-}
-
-.search {
-    margin: auto;
-    display: flex;
-    padding-top: 0px;
-}
-
-.search input[type=text] {
-    padding: 1px;
-    border: solid;
-    border-radius: 10px;
-    border-color: white;
-    background-color: black;
-    color: white;
-
-    font-size: 17px;
-    margin: auto;
-    text-align: center;
-}
-
-.content {
-    margin:100vh;
-    display: flex;
-    flex-wrap: wrap;
-
-}
-
-.emoticon {
-    margin: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-
-    border-radius: 10px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: gray;
-
-    background-color: black;
-    color: white;
-    
-    transition-property: border-color;
-    transition-duration: 0.125s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
-
-}
-
-.emoticon:hover {
-    border-color: white;
-}
-
-.emoticon:active {
-    border-color: gray;
-}
-
-
-
 :root {
+    --text: white;
+    --background: black;
+    --active: gray;
+    --sub: lightgray;
+
     --happy: flex;
     --sad: flex;
     --evil: flex;
@@ -105,7 +28,87 @@ body {
 .dull {display: var(--dull)}
 .wink {display: var(--wink)}
 
-
-
 .tags {display: var(--tags)}
 .help {display: var(--help)}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    transition: all 1s ease-in-out;
+
+    font-family:'Courier New', Courier, monospace ;
+}
+
+.header {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+#help {
+    margin: auto;
+    text-align: center;
+    color: var(--sub);
+    padding-top: 0px;
+    transition: color 1s ease-in-out;
+}
+
+#content {
+    flex-wrap: wrap; 
+}
+
+.search {
+    margin: auto;
+    display: flex;
+    padding-top: 0px;
+}
+
+.search input[type=text] {
+    padding: 1px;
+    border: solid;
+    border-radius: 10px;
+    border-color: var(--text);
+    background-color: var(--background);
+    color: var(--text);
+
+    transition: all 1s ease-in-out;
+
+
+    font-size: 17px;
+    margin: auto;
+    text-align: center;
+}
+
+.content {
+    margin:100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.emoticon {
+    margin: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border-radius: 10px;
+    border-width: 5px;
+    border-style: solid;
+
+    border-color: var(--active);
+    color: var(--text);
+    background-color: var(--background);
+
+    transition: all 1s ease-in-out;
+    
+    
+}
+
+.emoticon:hover {
+    border-color: var(--text);
+}
+
+.emoticon:active {
+    border-color: var(--active);
+}

@@ -1,5 +1,6 @@
 tagList = ["happy", "sad", "chicken", "evil", "silly", "shocked", "dull", "wink"];
 helpList = ["tags",  "help"];
+commandList = ["light",  "dark"];
 
 function headerEmoticon(input) {
     const emojis = [];
@@ -30,45 +31,6 @@ function addHelp(input, tags) {
     document.getElementById("content").insertAdjacentHTML("beforeend", elem);
 }
 
-
-function setupAllEmojis() {
-    addEmoticon(":)", "happy");
-    addEmoticon("c:", "happy");
-    addEmoticon(":D", "happy");
-
-    
-    addEmoticon(">:)", "evil");
-    addEmoticon("c:<", "evil");
-    addEmoticon(">:(", "evil");
-    addEmoticon(">:c", "evil");
-
-    addEmoticon(":(", "sad");
-    addEmoticon(":c", "sad");
-
-
-    addEmoticon(":P", "silly");
-    addEmoticon(">:P", "silly");
-    addEmoticon("xP", "silly");
-
-    addEmoticon("<( o - o )>", "chicken");
-
-    addEmoticon("o.o", "shocked");
-    addEmoticon("o.O", "shocked");
-    addEmoticon("0-0", "shocked");
-    addEmoticon("D:", "shocked");
-
-
-    addEmoticon("._.", "dull");
-    addEmoticon(".-.", "dull");
-    addEmoticon(":|", "dull");
-    addEmoticon(":/", "dull");
-
-    addEmoticon(";P", "wink");
-    addEmoticon(";)", "wink");
-    addEmoticon(";D", "wink");
-
-}
-
 function setupTags() {
     for (var i = 0; i < tagList.length; i++) {
         addHelp(tagList[i], "tags");
@@ -79,16 +41,16 @@ function setupTags() {
 function setupHelp() {
     addHelp("Type \"tags\" to get a list of tags", "help");
     addHelp("Typing any tag will show all emojis with that tag", "help");
-    addHelp("Click on a Emoticon to copy it!", "help")
-    addHelp("If the header changes, it worked!", "help")
-
+    addHelp("Click on a Emoticon to copy it!", "help");
+    addHelp("If the header changes, it worked!", "help");
+    addHelp("Here are some bonus commands (enter them like a tag to use)", "help");
+    addHelp("light", "help");
+    addHelp("dark", "help");
 }
 
 function getRidOfHelpText() {
     document.getElementById("help").style.display = "none";
 }
-
-
 
 function copybutton(input) {
     if (input != "") {
@@ -106,19 +68,42 @@ function copybutton(input) {
 
 }
 
-
-
 function search() {
     input = document.getElementById("search").value.toString();
     input = input.split(' ');
     useableTags = [];
     for (var i = 0; i < input.length; i++) {
+        input[i] = input[i].toLowerCase();
         if (tagList.includes(input[i]) || helpList.includes(input[i])) {
             useableTags.push(input[i]);
+        }
+        if (commandList.includes(input[i])) {
+            runCommand(input[i]);
+            break;
+
         }
     }
     hidetheones();
 
+}
+
+
+function runCommand(input) {
+    var r = document.querySelector(':root');
+    if (input == commandList[0]) { // Light mode
+        r.style.setProperty("--text", "black");
+        r.style.setProperty("--background", "white");
+        r.style.setProperty("--active", "gray");
+        r.style.setProperty("--sub", "black");
+    }
+    if (input == commandList[1]) { // Dark mode
+        r.style.setProperty("--text", "white");
+        r.style.setProperty("--background", "black");
+        r.style.setProperty("--active", "gray");
+        r.style.setProperty("--sub", "lightgray");
+    }
+
+    console.log(input);
 }
 
 function hidetheones() {
