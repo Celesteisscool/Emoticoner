@@ -24,6 +24,7 @@ function start() {
     setupAllEmojis();
     setupTags();
     setupHelp();
+    resize();
 }
 
 function addEmoticon(input, tags) {
@@ -144,7 +145,7 @@ function hidetheones() {
 }
 
 
-window.addEventListener('resize', function(event) {
+function resize() {
     size = window.innerWidth / window.innerHeight;
     if (size < 1 ) {
         zoom = 2;
@@ -157,4 +158,8 @@ window.addEventListener('resize', function(event) {
     }
     console.log(zoom);
     r.style.setProperty("--zoom", zoom )
-});
+}
+
+window.addEventListener('resize', resize());
+
+
