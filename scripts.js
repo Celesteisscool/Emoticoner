@@ -75,7 +75,7 @@ function copybutton(input) {
                                      
             );
         }
-        catch {
+        catch(e) {
             console.warn("Your browser is too old... :(");
             var copyElement = emoticonElemList[input];
 
