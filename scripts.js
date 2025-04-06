@@ -6,6 +6,8 @@ commandList = ["light",  "dark"];
 
 r = document.querySelector(':root');
 
+var emoticonElemList = {};
+
 
 function headerEmoticon(input) {
     const emojis = [];
@@ -33,6 +35,7 @@ function start() {
 function addEmoticon(input, tags) {
     elem = "<button class=\"emoticon " + tags + "\" onclick=\"copybutton(\'" + input + "\')\">" + input + "</button>"
     document.getElementById("content").insertAdjacentHTML("beforeend", elem);
+    emoticonElemList[input] = document.getElementById("content").lastChild;
 }
 
 function addHelp(input, tags) {
@@ -63,14 +66,28 @@ function getRidOfHelpText() {
 
 function copybutton(input) {
     if (input != "") {
-        navigator.clipboard.writeText(input).then(
-            () => {
-              console.log("Yay it worked! Yoinked " + input + " to the clipboard");
-            },
-            () => {
-                console.warn("Your browser is too old... :(");
-            }, 
-        );
+        
+        try {
+            navigator.clipboard.writeText(input).then(
+                () => {
+                console.log("Yay it worked! Yoinked " + input + " to the clipboard");
+                },
+                                     
+            );
+        }
+        catch {
+            console.warn("Your browser is too old... :(");
+            var copyElement = emoticonElemList[input];
+
+            // Select the text field
+            copyElement.select;
+
+             // Copy the text inside the text field
+            navigator.clipboard.writeText(copyElement.innerText);
+
+            // Alert the copied text
+            console.log("Copied the text the stupid way: " + copyElement.innerText);
+        }
         document.title = input;
         headerEmoticon(input);
     }
