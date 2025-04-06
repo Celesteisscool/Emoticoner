@@ -13,6 +13,9 @@ function headerEmoticon(input) {
     selected = Math.floor(Math.random() * 6);
     
     var emoji = emojis[selected];
+    if (Math.random() < 0.1) {
+        emoji = "8==D"; // penar
+    }
     if (input != null) {
         emoji = input;
     }
