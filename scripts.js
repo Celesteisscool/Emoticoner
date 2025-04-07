@@ -15,11 +15,12 @@ function headerEmoticon(input) {
     selected = Math.floor(Math.random() * 6);
     
     var emoji = emojis[selected];
-    if (Math.random() < 0.1) {
-        emoji = "8==D"; // penar
+    if (Math.random() < 0.02) { // 1/50 chance
+        emoji = atob("OD09RA==") ; // :P (its a secret)
     }
     if (input != null) {
         emoji = input;
+        document.title = input;
     }
     document.getElementsByClassName("header")[0].children[0].innerText = "Emoticoner " + emoji;
 }
@@ -88,7 +89,6 @@ function copybutton(input) {
             // Alert the copied text
             console.log("Copied the text the stupid way: " + copyElement.innerText);
         }
-        document.title = input;
         headerEmoticon(input);
     }
 
