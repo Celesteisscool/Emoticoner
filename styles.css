@@ -6,37 +6,11 @@
     /* no need for light dark */
     --sub: light-dark(black, lightgray);
 
-    --happy: flex;
-    --sad: flex;
-    --evil: flex;
-    --chicken: flex;
-    --silly: flex;
-    --shocked: flex;
-    --dull: flex;
-    --wink: flex;
-    --table: flex;
-
-    --tags: none;
-    --help: none;
-
     flex-wrap: wrap;    
 
     --zoom: 1;
     zoom: var(--zoom);
 }
-
-.evil {display: var(--evil)}
-.happy {display: var(--happy)}
-.sad {display: var(--sad)}
-.chicken {display: var(--chicken)}
-.silly {display: var(--silly)}
-.shocked {display: var(--shocked)}
-.dull {display: var(--dull)}
-.wink {display: var(--wink)}
-.table {display: var(--table)}
-
-.tags {display: var(--tags)}
-.help {display: var(--help)}
 
 body {
     background-color: var(--background);
@@ -108,8 +82,6 @@ body {
     background-color: var(--background);
 
     transition: all 1s ease-in-out;
-    
-    
 }
 
 .emoticon:hover {

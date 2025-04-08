@@ -1,8 +1,6 @@
 tagList = ["happy", "sad", "chicken", "evil", "silly", "shocked", "dull", "wink", "table"];
-alliasReplacement = [["flip", "table"], ["joyful", "happy"], ["thebigsad", "sad"]];
-alliasList = ["flip", "joyful", "thebigsad"];
-helpList = ["tags",  "help"];
-commandList = ["light",  "dark"];
+commandList = ["light",  "dark", "help"];
+helpList = ["tags", "help"];
 
 r = document.querySelector(':root');
 
@@ -28,41 +26,47 @@ function headerEmoticon(input) {
 function start() {
     headerEmoticon();
     setupAllEmojis();
-    setupTags();
-    setupHelp();
+    setupHelpText();
+    setupHelpTags();
     resize();
+    filterElements([]);
 }
 
 function addEmoticon(input, tags) {
-    elem = "<button class=\"emoticon " + tags + "\" onclick=\"copybutton(\'" + input + "\')\">" + input + "</button>"
+    elem = "<button class=\"emoticon\" data-tags=" + tags + " onclick=\"copybutton(\'" + input + "\')\">" + input + "</button>"
     document.getElementById("content").insertAdjacentHTML("beforeend", elem);
     emoticonElemList[input] = document.getElementById("content").lastChild;
 }
 
-function addHelp(input, tags) {
-    elem = "<button class=\"emoticon " + tags + "\" onclick=\"copybutton(\'\')\">" + input + "</button>"
+function addHelp(input) {
+    elem = "<button class=\"emoticon\" data-tags=help>" + input + "</button>"
     document.getElementById("content").insertAdjacentHTML("beforeend", elem);
+    emoticonElemList[input] = document.getElementById("content").lastChild;
 }
 
-function setupTags() {
+function addTag(input) {
+    elem = "<button class=\"emoticon\" data-tags=tags>" + input + "</button>"
+    document.getElementById("content").insertAdjacentHTML("beforeend", elem);
+    emoticonElemList[input] = document.getElementById("content").lastChild;
+}
+
+
+
+
+function setupHelpTags() {
     for (var i = 0; i < tagList.length; i++) {
-        addHelp(tagList[i], "tags");
+        addTag(tagList[i]);
     }
- 
 }
 
-function setupHelp() {
-    addHelp("Type \"tags\" to get a list of tags", "help");
-    addHelp("Typing any tag will show all emojis with that tag", "help");
-    addHelp("Click on a Emoticon to copy it!", "help");
-    addHelp("If the header changes, it worked!", "help");
-    addHelp("Here are some bonus commands (enter them like a tag to use)", "help");
-    addHelp("light", "help");
-    addHelp("dark", "help");
-}
-
-function getRidOfHelpText() {
-    document.getElementById("help").style.display = "none";
+function setupHelpText() {
+    addHelp("Type \"tags\" to get a list of tags");
+    addHelp("Typing any tag will show all emojis with that tag");
+    addHelp("Click on a Emoticon to copy it!");
+    addHelp("If the header changes, it worked!");
+    addHelp("Here are some bonus commands (enter them like a tag to use)");
+    addHelp("light");
+    addHelp("dark");
 }
 
 function copybutton(input) {
@@ -100,7 +104,7 @@ function search() {
     useableTags = [];
     for (var i = 0; i < input.length; i++) {
         input[i] = input[i].toLowerCase();
-        if (tagList.includes(input[i]) || helpList.includes(input[i]) || alliasList.includes(input[i])) {
+        if (tagList.includes(input[i]) || helpList.includes(input[i])) {
             useableTags.push(input[i]);
         }
         if (commandList.includes(input[i])) {
@@ -108,60 +112,33 @@ function search() {
             break;
         }
     }
-    hidetheones();
-
+    // hidetheones();
+    filterElements(useableTags);
 }
 
 
 function runCommand(input) {
-    if (input == commandList[0]) { // Light mode
+    if (input == "light") { // Light mode
         r.style.setProperty("--text", "black");
         r.style.setProperty("--background", "white");
         r.style.setProperty("--active", "gray");
         r.style.setProperty("--sub", "black");
     }
-    if (input == commandList[1]) { // Dark mode
+    if (input == "dark") { // Dark mode
         r.style.setProperty("--text", "white");
         r.style.setProperty("--background", "black");
         r.style.setProperty("--active", "gray");
         r.style.setProperty("--sub", "lightgray");
+    }
+    if (input == "help") {
+        document.getElementById("help").style.display = "none";
     }
 
     console.log(input);
 }
 
 function hidetheones() {
-    if (useableTags.length != 0) {
-        for (var i = 0; i < tagList.length; i++) {
-            if (useableTags.includes(tagList[i])) {
-                r.style.setProperty("--"+ tagList[i], "flex");
-            } else {
-                r.style.setProperty("--"+ tagList[i], "none");
-            }
-        }
-
-        for (var i = 0; i < alliasReplacement.length; i++) {
-            if (useableTags.includes(alliasReplacement[i][0])) {
-                r.style.setProperty("--"+ alliasReplacement[i][1], "flex");
-            }
-        }
-
-        for (var i = 0; i < helpList.length; i++) {
-            if (useableTags.includes(helpList[i])) {
-                r.style.setProperty("--"+ helpList[i], "flex");
-                getRidOfHelpText();
-            } else {
-                r.style.setProperty("--"+ helpList[i], "none");
-            }
-        }
-    } else {
-        for (var i = 0; i < tagList.length; i++) {
-            r.style.setProperty("--"+ tagList[i], "flex")
-        }
-        for (var i = 0; i < helpList.length; i++) {
-            r.style.setProperty("--"+ helpList[i], "none")
-        }
-    }
+    
 }
 
 
@@ -182,4 +159,14 @@ function resize() {
 
 window.addEventListener('resize', resize());
 
-
+function filterElements(requiredTags) {
+    // console.log(requiredTags)
+    document.querySelectorAll('[data-tags]').forEach(el => {
+        const tags = el.dataset.tags.split(',').map(t => t.trim().toLowerCase());
+        el.style.display = requiredTags.every(tag => tags.includes(tag.toLowerCase())) ? '' : 'none';
+        if ((tags.includes("help") || tags.includes("tags")) && requiredTags.length == 0) {
+            el.style.display = 'none';
+            console.log(requiredTags)
+        }
+    });
+  }
