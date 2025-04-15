@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
-    <script src="emoticons.js"></script> 
-    <script src="scripts.js"></script> 
-    <body onload="start()"> 
-<title>Emoticoner</title>
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-</head>
+    <script src="scripts.js"></script>
+    <script src="emoticons.js"></script>
+    <canvas id="background"></canvas>
+    
+    <body onload="start()">
+        <title>Emoticoner</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    
     <body>
         <div class="header">
             <h1 style="margin-bottom: 0px;">HEADER YAY</h1>
@@ -17,10 +21,12 @@
         <div class="search">
             <input type="text" placeholder="Search.." onkeyup="search()" id="search">
         </div>
-
-        <div id="content", style="display: flex;">
+        
+        <div id="content" , style="display: flex;">
             
         </div>
-
+        
     </body>
-</html> 
+    <script src="background.js"></script>
+
+</html>

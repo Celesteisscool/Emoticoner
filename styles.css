@@ -4,12 +4,21 @@
     --background: light-dark(white, black);
     --active: gray; 
     /* no need for light dark */
-    --sub: light-dark(black, lightgray);
+    --sub: light-dark(black, white);
 
     flex-wrap: wrap;    
 
     --zoom: 1;
     zoom: var(--zoom);
+}
+
+canvas {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 body {
