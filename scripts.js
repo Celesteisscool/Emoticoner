@@ -140,6 +140,9 @@ function runCommand(input) {
         createDots(10);
     }
     if (input == "background") {
+        while (particles.length > 0) {
+            particles.pop()
+        }
         document.getElementById("background").remove();
     }
 
