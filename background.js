@@ -15,12 +15,10 @@ function resize() {
 }
 
 function getColor() {
-    let elem = document.getElementById("help");
+    let elem = document.getElementsByClassName("header")[0];
     rgb = window.getComputedStyle(elem).color;
 
-
     return rgb
-
 }
 
 class Particle {
