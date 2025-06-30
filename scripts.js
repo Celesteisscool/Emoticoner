@@ -1,4 +1,4 @@
-tagList = ["happy", "sad", "chicken", "evil", "silly", "shocked", "dull", "wink", "table"];
+
 commandList = ["light", "dark", "help", "moredots", "background"];
 helpList = ["tags", "help"];
 
@@ -45,11 +45,28 @@ function addHelp(input) {
 }
 
 function addTag(input) {
-    elem = "<button class=\"emoticon\" data-tags=tags>" + input + "</button>"
+    elem = "<button class=\"emoticon\" data-tags=tags onclick=\"setSearch(\'" + input + "\', true, false)\">" + input + "</button>"
     document.getElementById("content").insertAdjacentHTML("beforeend", elem);
     emoticonElemList[input] = document.getElementById("content").lastChild;
 }
 
+function addCommand(input) {
+    elem = "<button class=\"emoticon\" data-tags=help onclick=\"setSearch(\'" + input + "\', false, true)\">" + input + "</button>"
+    document.getElementById("content").insertAdjacentHTML("beforeend", elem);
+    emoticonElemList[input] = document.getElementById("content").lastChild;
+}
+
+
+function setSearch(input, enter, clearb4) {
+    if (input != "") {
+        if (clearb4 == true) {
+            document.getElementById("search").value = input
+            search()
+        }
+        document.getElementById("search").value = input
+        if (enter == true) { search() }
+    }
+}
 
 
 
@@ -65,11 +82,10 @@ function setupHelpText() {
     addHelp("Click on a Emoticon to copy it!");
     addHelp("If the header changes, it worked!");
     addHelp("Here are some bonus commands (enter them like a tag to use)");
-    addHelp("light");
-    addHelp("dark");
-    addHelp("moredots");
-    addHelp("background");
-
+    addCommand("light");
+    addCommand("dark");
+    addCommand("moredots");
+    addCommand("background");
 }
 
 function copybutton(input) {

@@ -52,31 +52,30 @@ class Particle {
 
 
         if (this.posX + this.radius > width) {
-            this.speedX = -this.speedX + Math.random();
+            this.speedX = -this.speedX + (Math.random() / 2);
             this.posX = width - this.radius;
         }
         if (this.posX - this.radius < 0) {
-            this.speedX = -this.speedX + Math.random();
+            this.speedX = -this.speedX + (Math.random() / 2);
             this.posX = 0 + this.radius;
         }
 
 
         if (this.posY + this.radius > height) {
-            this.speedY = -this.speedY + Math.random();
+            this.speedY = -this.speedY + (Math.random() / 2);
             this.posY = height - this.radius;
         }
         if (this.posY - this.radius < 0) {
-            this.speedY = -this.speedY + Math.random();
+            this.speedY = -this.speedY + (Math.random() / 2);
             this.posY = 0 + this.radius;
         }
 
-
-
-
-        this.speedX = this.speedX / 1.01;
-        this.speedY = this.speedY / 1.01;
-
-
+        if (Math.abs(this.speedX / 1.01) > 0.2) {
+            this.speedX = this.speedX / 1.01;
+        }
+        if (Math.abs(this.speedY / 1.01) > 0.2) {
+            this.speedY = this.speedY / 1.01;
+        }
 
         this.posX += this.speedX;
         this.posY += this.speedY;

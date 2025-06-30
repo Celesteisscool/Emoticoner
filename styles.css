@@ -2,18 +2,18 @@
     color-scheme: light dark;
     --text: light-dark(black, white);
     --background: light-dark(white, black);
-    --active: gray; 
+    --active: gray;
     /* no need for light dark */
     --sub: light-dark(black, white);
 
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
 
     --zoom: 1;
     zoom: var(--zoom);
 }
 
 canvas {
-    position: absolute;
+    position: fixed;
     z-index: -1;
     top: 0;
     left: 0;
@@ -26,7 +26,7 @@ body {
     color: var(--text);
     transition: all 1s ease-in-out;
 
-    font-family:'Courier New', Courier, monospace ;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .header {
@@ -44,7 +44,7 @@ body {
 }
 
 #content {
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .search {
@@ -70,7 +70,7 @@ body {
 }
 
 .content {
-    margin:100vh;
+    margin: 100vh;
     display: flex;
     flex-wrap: wrap;
 }
