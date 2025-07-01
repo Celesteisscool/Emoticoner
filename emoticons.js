@@ -14,7 +14,8 @@ tagList = [
     "silenced",
     "fish",
     "o",
-    "squint"
+    "squint",
+    "blush"
 ];
 
 function setupAllEmojis() {
@@ -201,7 +202,7 @@ function setupAllEmojis() {
 
     addEmoticon("(>_<)",  ["squint"])
     addEmoticon("(>_<)>", ["squint"])
-    addEmoticon("(>w<)",  ["squint"])	
+    addEmoticon("(>w<)",  ["squint"])   
 
 
 
@@ -211,4 +212,8 @@ function setupAllEmojis() {
     addEmoticon("(╯°□°)╯︵ ┻━┻", ["table"]);
     addEmoticon("(╯°Д°）╯︵ /(.□ . /)", ["table"]);
     addEmoticon("( ꩜ ᯅ ꩜;)", ["confused"]);
+    
+    addEmoticon("(⁄ ⁄•⁄ω⁄•⁄ ⁄)", ["blush", "cat"]);
+    addEmoticon("://)", ["blush", "happy"]);
+    addEmoticon("://D", ["blush", "happy"]);
 }
