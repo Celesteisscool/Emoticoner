@@ -1,9 +1,24 @@
-commandList = ["light", "dark", "help", "moredots", "background"];
+commandList = ["light", "dark", "help", "moredots", "background", "runtest"];
 helpList = ["tags", "help"];
 
 r = document.querySelector(':root');
 
 var emoticonElemList = {};
+
+function sanitize(string) {
+  const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+      "/": '&#x2F;',
+      "\\": '&bsol;'
+  };
+  const reg = /[&<>"'/]/ig;
+  return string.replace(reg, (match)=>(map[match]));
+}
+
 
 function headerEmoticon(input) {
     const emojis = [];
@@ -32,15 +47,21 @@ function start() {
     lastSearch = ""
 }
 
+function runTest() {
+    for (let i = 0; i < emoticonCount; i++) {
+        document.getElementById("content").children[i].click()
+    }
+}
+
 function addEmoticon(input, tags) {
+    input = sanitize(input)
     copyin = input
-    input = input.replace(/\"/g, "&quot;")
-    input = input.replace(/\'/g, "&apos;")
-    copyin = input.replace(/\\/g, "&bsol;&bsol;")
+    copyin = copyin.replace("\\", "\\\\")
+    copyin = copyin.replace("&#x27;", "\\\'")
     
     hovertags = tags.toString().replace(/,/g, ",&nbsp;")
 
-    elem = "<button class=\"emoticon\" data-tags=" + tags + " title=" + hovertags + " onclick=\"copybutton(\'" + copyin + "\')\">" + input + "</button>"
+    elem = "<button class=\"emoticon\" data-tags=" + tags + " title=" + hovertags + " onclick=\"copybutton(\'" + (copyin) + "\')\">" + input + "</button>"
     document.getElementById("content").insertAdjacentHTML("beforeend", elem);
     emoticonElemList[input] = document.getElementById("content").lastChild;
 
@@ -96,6 +117,7 @@ function setupHelpText() {
     addCommand("dark");
     addCommand("moredots");
     addCommand("background");
+    addCommand("runTest");
 }
 
 function copybutton(input) {
@@ -179,6 +201,9 @@ function runCommand(input) {
             document.getElementById("background").style.display = "";
             createDots(100);
         }
+    }
+    if (input == "runtest") {
+        runTest()
     }
 }
 
