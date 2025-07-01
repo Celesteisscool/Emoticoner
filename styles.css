@@ -47,6 +47,10 @@ body {
     flex-wrap: wrap;
 }
 
+div#content {
+    justify-content: center;
+}
+
 .search {
     margin: auto;
     display: flex;
