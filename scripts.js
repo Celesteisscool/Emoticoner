@@ -38,8 +38,7 @@ function addEmoticon(input, tags) {
     input = input.replace(/\'/g, "&apos;")
     copyin = input.replace(/\\/g, "&bsol;&bsol;")
     
-    console.log(tags.toString().replace(",", ", "))
-    hovertags = tags.toString().replace(",", ",&nbsp;")
+    hovertags = tags.toString().replace(/,/g, ",&nbsp;")
 
     elem = "<button class=\"emoticon\" data-tags=" + tags + " title=" + hovertags + " onclick=\"copybutton(\'" + copyin + "\')\">" + input + "</button>"
     document.getElementById("content").insertAdjacentHTML("beforeend", elem);
