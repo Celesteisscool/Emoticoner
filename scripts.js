@@ -23,6 +23,7 @@ function headerEmoticon(input) {
 
 function start() {
     headerEmoticon();
+    emoticonCount = 0;
     setupAllEmojis();
     setupHelpText();
     setupHelpTags();
@@ -32,9 +33,14 @@ function start() {
 }
 
 function addEmoticon(input, tags) {
+    input = input.replace(/\"/g, "&bdquo;")
+    input = input.replace(/\'/g, "&sbquo;")
+
     elem = "<button class=\"emoticon\" data-tags=" + tags + " onclick=\"copybutton(\'" + input + "\')\">" + input + "</button>"
     document.getElementById("content").insertAdjacentHTML("beforeend", elem);
     emoticonElemList[input] = document.getElementById("content").lastChild;
+
+    emoticonCount += 1;
 }
 
 function addHelp(input) {
@@ -80,6 +86,7 @@ function setupHelpText() {
     addHelp("Typing any tag will show all emojis with that tag");
     addHelp("Click on a Emoticon to copy it!");
     addHelp("If the header changes, it worked!");
+    addHelp("Currently hosting " + emoticonCount.toString() + " Emoticons!")
     addHelp("Here are some bonus commands (enter them like a tag to use)");
     addCommand("light");
     addCommand("dark");
