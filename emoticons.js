@@ -104,109 +104,109 @@ function setupAllEmojis() {
     addEmoticon("X3",  ["cat", "dead"]);
     addEmoticon(">:3", ["cat", "brows"]);
 
-    addEmoticon(";-)", ["wink", "happy", "nose"])
-    addEmoticon(";)",  ["wink", "happy"])
-    addEmoticon(";-]", ["wink", "happy", "nose"])
-    addEmoticon(";]",  ["wink", "happy"])
-    addEmoticon(";^)", ["wink", "happy", "nose"])
-    addEmoticon(";>",  ["wink", "happy"])
-    addEmoticon(";D",  ["wink", "happy"])
-    addEmoticon(";3",  ["wink", "cat"])
+    addEmoticon(";-)", ["wink", "happy", "nose"]);
+    addEmoticon(";)",  ["wink", "happy"]);
+    addEmoticon(";-]", ["wink", "happy", "nose"]);
+    addEmoticon(";]",  ["wink", "happy"]);
+    addEmoticon(";^)", ["wink", "happy", "nose"]);
+    addEmoticon(";>",  ["wink", "happy"]);
+    addEmoticon(";D",  ["wink", "happy"]);
+    addEmoticon(";3",  ["wink", "cat"]);
 
-    addEmoticon(":-P", ["silly", "nose"])
-    addEmoticon(":P",  ["silly"])
-    addEmoticon("X-P", ["silly", "nose", "dead"])
-    addEmoticon("XP",  ["silly", "dead"])
-    addEmoticon("x-p", ["silly", "nose", "dead"])
-    addEmoticon("xp",  ["silly", "dead"])
-    addEmoticon(":-p", ["silly", "nose"])
-    addEmoticon(":p",  ["silly"])
-    addEmoticon(":-Þ", ["silly", "nose"])
-    addEmoticon(":Þ",  ["silly"])
-    addEmoticon(":-þ", ["silly", "nose"])
-    addEmoticon(":þ",  ["silly"])
-    addEmoticon(":-b", ["silly", "nose"])
-    addEmoticon(":b",  ["silly"])
-    addEmoticon("d:",  ["silly"])
-    addEmoticon("=p",  ["silly"])
-    addEmoticon(">:b", ["silly", "brows"])
+    addEmoticon(":-P", ["silly", "nose"]);
+    addEmoticon(":P",  ["silly"]);
+    addEmoticon("X-P", ["silly", "nose", "dead"]);
+    addEmoticon("XP",  ["silly", "dead"]);
+    addEmoticon("x-p", ["silly", "nose", "dead"]);
+    addEmoticon("xp",  ["silly", "dead"]);
+    addEmoticon(":-p", ["silly", "nose"]);
+    addEmoticon(":p",  ["silly"]);
+    addEmoticon(":-Þ", ["silly", "nose"]);
+    addEmoticon(":Þ",  ["silly"]);
+    addEmoticon(":-þ", ["silly", "nose"]);
+    addEmoticon(":þ",  ["silly"]);
+    addEmoticon(":-b", ["silly", "nose"]);
+    addEmoticon(":b",  ["silly"]);
+    addEmoticon("d:",  ["silly"]);
+    addEmoticon("=p",  ["silly"]);
+    addEmoticon(">:b", ["silly", "brows"]);
 
-    addEmoticon(":-/",   ["dull", "nose"])
-    addEmoticon(":/",    ["dull"])
-    addEmoticon("\',:^I", ["dull", "confused", "nose", "brows"])
-    addEmoticon(">:\\",  ["dull", "brows"])
-    addEmoticon(">:/",   ["dull", "brows"])
-    addEmoticon(":\\",   ["dull"])
-    addEmoticon("=/",    ["dull"])
-    addEmoticon("=\\",   ["dull"])
-    addEmoticon(":-|",   ["dull", "nose"])
-    addEmoticon(":|",    ["dull"])
+    addEmoticon(":-/",   ["dull", "nose"]);
+    addEmoticon(":/",    ["dull"]);
+    addEmoticon("\',:^I", ["dull", "confused", "nose", "brows"]);
+    addEmoticon(">:\\",  ["dull", "brows"]);
+    addEmoticon(">:/",   ["dull", "brows"]);
+    addEmoticon(":\\",   ["dull"]);
+    addEmoticon("=/",    ["dull"]);
+    addEmoticon("=\\",   ["dull"]);
+    addEmoticon(":-|",   ["dull", "nose"]);
+    addEmoticon(":|",    ["dull"]);
     
-    addEmoticon(":-X", ["silenced", "nose"])
-    addEmoticon(":X",  ["silenced"])
-    addEmoticon(":-#", ["silenced", "nose"])
-    addEmoticon(":#",  ["silenced"])
-    addEmoticon(":-&", ["silenced", "nose"])
-    addEmoticon(":&",  ["silenced"])
+    addEmoticon(":-X", ["silenced", "nose"]);
+    addEmoticon(":X",  ["silenced"]);
+    addEmoticon(":-#", ["silenced", "nose"]);
+    addEmoticon(":#",  ["silenced"]);
+    addEmoticon(":-&", ["silenced", "nose"]);
+    addEmoticon(":&",  ["silenced"]);
     
-    addEmoticon(">:-)", ["brows", "happy", "nose"])
-    addEmoticon(">:)",  ["brows", "happy"])
-    addEmoticon("}:-)", ["brows", "happy", "nose"])
-    addEmoticon("}:)",  ["brows", "happy"])
-    addEmoticon(">;-)", ["brows", "happy", "wink", "nose"])
-    addEmoticon(">;)",  ["brows", "happy", "wink"])
-    addEmoticon(">:3",  ["brows", "cat"])
-    addEmoticon(">;3",  ["brows", "cat", "wink"])
+    addEmoticon(">:-)", ["brows", "happy", "nose"]);
+    addEmoticon(">:)",  ["brows", "happy"]);
+    addEmoticon("}:-)", ["brows", "happy", "nose"]);
+    addEmoticon("}:)",  ["brows", "happy"]);
+    addEmoticon(">;-)", ["brows", "happy", "wink", "nose"]);
+    addEmoticon(">;)",  ["brows", "happy", "wink"]);
+    addEmoticon(">:3",  ["brows", "cat"]);
+    addEmoticon(">;3",  ["brows", "cat", "wink"]);
 
-    addEmoticon("',:-|", ["dull", "brows", "nose", "confused"])
-    addEmoticon("',:-l", ["dull", "brows", "nose", "confused"])
+    addEmoticon("',:-|", ["dull", "brows", "nose", "confused"]);
+    addEmoticon("',:-l", ["dull", "brows", "nose", "confused"]);
     
-    addEmoticon("><>", ["fish"])
-    addEmoticon("<><", ["fish"])
-    addEmoticon("<*)))-{", ["fish"])
-    addEmoticon("><(((*>", ["fish"])
+    addEmoticon("><>", ["fish"]);
+    addEmoticon("<><", ["fish"]);
+    addEmoticon("<*)))-{", ["fish"]);
+    addEmoticon("><(((*>", ["fish"]);
 
-    addEmoticon("\\o/",   ["happy", "o"])
-    addEmoticon("*\\O/*", ["happy", "o"])
-    addEmoticon("o7", ["o"])
+    addEmoticon("\\o/",   ["happy", "o"]);
+    addEmoticon("*\\O/*", ["happy", "o"]);
+    addEmoticon("o7", ["o"]);
 
-    addEmoticon("._.", ["dull"])
+    addEmoticon("._.", ["dull"]);
 
-    addEmoticon(";-;", ["sad"])
-    addEmoticon("T_T", ["sad"])
-    addEmoticon("T-T", ["sad"])
-    addEmoticon("Q-Q", ["sad"])
-    addEmoticon("Q-q", ["sad"])
-    addEmoticon("q-q", ["sad"])
+    addEmoticon(";-;", ["sad"]);
+    addEmoticon("T_T", ["sad"]);
+    addEmoticon("T-T", ["sad"]);
+    addEmoticon("Q-Q", ["sad"]);
+    addEmoticon("Q-q", ["sad"]);
+    addEmoticon("q-q", ["sad"]);
 
-    addEmoticon("X_X", ["dead"])
-    addEmoticon("x_x", ["dead"])
-    addEmoticon("+_+", ["dead"])
-    addEmoticon("X_x", ["dead"])
-    addEmoticon("x_X", ["dead"])
+    addEmoticon("X_X", ["dead"]);
+    addEmoticon("x_x", ["dead"]);
+    addEmoticon("+_+", ["dead"]);
+    addEmoticon("X_x", ["dead"]);
+    addEmoticon("x_X", ["dead"]);
 
-    addEmoticon("O_O", ["shocked"])
-    addEmoticon("o_o", ["shocked"])
-    addEmoticon("O-O", ["shocked"])
-    addEmoticon("o-o", ["shocked"])
-    addEmoticon("O_o", ["shocked"])
-    addEmoticon("o_O", ["shocked"])
+    addEmoticon("O_O", ["shocked"]);
+    addEmoticon("o_o", ["shocked"]);
+    addEmoticon("O-O", ["shocked"]);
+    addEmoticon("o-o", ["shocked"]);
+    addEmoticon("O_o", ["shocked"]);
+    addEmoticon("o_O", ["shocked"]);
 
-    addEmoticon("o/", ["o"])
-    addEmoticon("\\o", ["o"])
+    addEmoticon("o/", ["o"]);
+    addEmoticon("\\o", ["o"]);
 
-    addEmoticon("ಠ__ಠ", ["dull"])
-    addEmoticon("ಠ_ಠ", ["dull"])
+    addEmoticon("ಠ__ಠ", ["dull"]);
+    addEmoticon("ಠ_ಠ", ["dull"]);
 
-    addEmoticon("ฅ(^•ﻌ•^ฅ)", ["cat"])
+    addEmoticon("ฅ(^•ﻌ•^ฅ)", ["cat"]);
 
-    addEmoticon("(>_<)",  ["squint"])
-    addEmoticon("(>_<)>", ["squint"])
-    addEmoticon("(>w<)",  ["squint"])   
+    addEmoticon("(>_<)",  ["squint"]);
+    addEmoticon("(>_<)>", ["squint"]);
+    addEmoticon("(>w<)",  ["squint"]);
 
 
 
-    // These are from friends :)
+    // These are from friends :);
     addEmoticon("°.°", ["shocked", "confused"]);
     addEmoticon("૮ - ﻌ • ა", ["wink"]);
     addEmoticon("(╯°□°)╯︵ ┻━┻", ["table"]);

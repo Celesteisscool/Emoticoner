@@ -33,10 +33,12 @@ function start() {
 }
 
 function addEmoticon(input, tags) {
-    input = input.replace(/\"/g, "&bdquo;")
-    input = input.replace(/\'/g, "&sbquo;")
+    copyin = input
+    input = input.replace(/\"/g, "&quot;")
+    input = input.replace(/\'/g, "&apos;")
+    copyin = input.replace(/\\/g, "&bsol;&bsol;")
 
-    elem = "<button class=\"emoticon\" data-tags=" + tags + " onclick=\"copybutton(\'" + input + "\')\">" + input + "</button>"
+    elem = "<button class=\"emoticon\" data-tags=" + tags + " onclick=\"copybutton(\'" + copyin + "\')\">" + input + "</button>"
     document.getElementById("content").insertAdjacentHTML("beforeend", elem);
     emoticonElemList[input] = document.getElementById("content").lastChild;
 
