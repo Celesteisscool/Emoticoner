@@ -1,11 +1,9 @@
-
 commandList = ["light", "dark", "help", "moredots", "background"];
 helpList = ["tags", "help"];
 
 r = document.querySelector(':root');
 
 var emoticonElemList = {};
-
 
 function headerEmoticon(input) {
     const emojis = [];
@@ -30,6 +28,7 @@ function start() {
     setupHelpTags();
     resize();
     filterElements([]);
+    lastSearch = ""
 }
 
 function addEmoticon(input, tags) {
@@ -61,10 +60,10 @@ function setSearch(input, enter, clearb4) {
     if (input != "") {
         if (clearb4 == true) {
             document.getElementById("search").value = input
-            search()
+            runSearch()
         }
         document.getElementById("search").value = input
-        if (enter == true) { search() }
+        if (enter == true) { runSearch() }
     }
 }
 
@@ -117,22 +116,25 @@ function copybutton(input) {
 
 }
 
-function search() {
+function runSearch() {
     input = document.getElementById("search").value.toString();
-    input = input.split(' ');
-    useableTags = [];
-    for (var i = 0; i < input.length; i++) {
-        input[i] = input[i].toLowerCase();
-        if (tagList.includes(input[i]) || helpList.includes(input[i])) {
-            useableTags.push(input[i]);
+    if (lastSearch != input) {
+        input = input.split(' ');
+        useableTags = [];
+        for (var i = 0; i < input.length; i++) {
+            input[i] = input[i].toLowerCase();
+            if (tagList.includes(input[i]) || helpList.includes(input[i])) {
+                useableTags.push(input[i]);
+            }
+            if (commandList.includes(input[i])) {
+                runCommand(input[i]);
+                break;
+            }
         }
-        if (commandList.includes(input[i])) {
-            runCommand(input[i]);
-            break;
-        }
+        // hidetheones();
+        filterElements(useableTags);
     }
-    // hidetheones();
-    filterElements(useableTags);
+    lastSearch = input
 }
 
 
@@ -156,18 +158,18 @@ function runCommand(input) {
         createDots(10);
     }
     if (input == "background") {
-        while (particles.length > 0) {
-            particles.pop()
+        if (particles.length > 0) {
+            while (particles.length > 0) {
+                particles.pop()
+            }
+            document.getElementById("background").style.display = "none";
         }
-        document.getElementById("background").remove();
+        else {
+            document.getElementById("background").style.display = "";
+            createDots(100);
+        }
     }
-
 }
-
-function hidetheones() {
-
-}
-
 
 function resize() {
     size = window.innerWidth / window.innerHeight;
