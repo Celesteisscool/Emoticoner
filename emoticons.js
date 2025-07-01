@@ -15,7 +15,8 @@ tagList = [
     "fish",
     "o",
     "squint",
-    "blush"
+    "blush",
+    "sus"
 ];
 
 function setupAllEmojis() {
@@ -216,4 +217,8 @@ function setupAllEmojis() {
     addEmoticon("(⁄ ⁄•⁄ω⁄•⁄ ⁄)", ["blush", "cat"]);
     addEmoticon("://)", ["blush", "happy"]);
     addEmoticon("://D", ["blush", "happy"]);
+    
+    addEmoticon("ඞ", ["sus"]);
+    addEmoticon("ඞා", ["sus"]);
+    addEmoticon("𐐘", ["sus"]);
 }
