@@ -14,9 +14,9 @@ tagList = [
     "silenced",
     "fish",
     "o",
-    "squint",
     "blush",
-    "sus"
+    "sus",
+    "angry"
 ];
 
 function setupAllEmojis() {
@@ -166,6 +166,8 @@ function setupAllEmojis() {
     addEmoticon("<><", ["fish"]);
     addEmoticon("<*)))-{", ["fish"]);
     addEmoticon("><(((*>", ["fish"]);
+    addEmoticon(">°)))彡", ["fish"]);
+    addEmoticon("><ヨヨ(°))<<", ["fish"]);
 
     addEmoticon("\\o/",   ["happy", "o"]);
     addEmoticon("*\\O/*", ["happy", "o"]);
@@ -201,11 +203,19 @@ function setupAllEmojis() {
 
     addEmoticon("ฅ(^•ﻌ•^ฅ)", ["cat"]);
 
-    addEmoticon("(>_<)",  ["squint"]);
-    addEmoticon("(>_<)>", ["squint"]);
-    addEmoticon("(>w<)",  ["squint"]);
-
-
+    addEmoticon("ヽ(`Д´)ﾉ", ["angry", "brows"])
+    addEmoticon("(＃ﾟДﾟ)",  ["angry"])
+    addEmoticon("（´∀｀）",  ["happy"])
+    addEmoticon("Σ(゜д゜;)",  ["shocked"])
+    addEmoticon("ヽ(´▽`)/",  ["happy"])
+    addEmoticon("^ㅂ^",  ["happy"])
+    
+    // Emojidb
+    addEmoticon("(˶˃ ᵕ ˂˶)",  ["happy", "blush"])
+    addEmoticon("(˶ᵔ ᵕ ᵔ˶)",  ["happy", "blush"])
+    addEmoticon("◝(ᵔᗜᵔ)◜",  ["happy"])
+    addEmoticon("₍^. .^₎Ⳋ",  ["cat"])
+    addEmoticon("₍^. .^₎⟆",  ["cat"])
 
     // These are from friends :);
     addEmoticon("°.°", ["shocked", "confused"]);
@@ -221,4 +231,6 @@ function setupAllEmojis() {
     addEmoticon("ඞ", ["sus"]);
     addEmoticon("ඞා", ["sus"]);
     addEmoticon("𐐘", ["sus"]);
+
+
 }
