@@ -150,6 +150,19 @@ function copybutton(input) {
 
 }
 
+function calcSimilarity(str1, str2) {
+    let length = Math.max(str1.length, str2.length);
+    
+    let similarity = 0;
+    for (let i = 0; i < length; i++) {
+        if (str1[i] == str2[i]) {
+            similarity++;
+        }
+    }
+    
+    return similarity / length;
+}
+
 function runSearch() {
     input = document.getElementById("search").value.toString();
     if (lastSearch != input) {
@@ -157,10 +170,21 @@ function runSearch() {
         useableTags = [];
         for (var i = 0; i < input.length; i++) {
             input[i] = input[i].toLowerCase();
-            if (tagList.includes(input[i]) || helpList.includes(input[i])) {
+            let isHelp = helpList.includes(input[i]);
+            let isCmd = commandList.includes(input[i]);
+            
+            if (tagList.includes(input[i]) || isHelp) {
                 useableTags.push(input[i]);
+            } else if (!isHelp && !isCmd) {
+                for (let k = 0; k < tagList.length; k++) {
+                    let sim = calcSimilarity(input[i], tagList[k]);
+                    if (sim > 0.5) {
+                        useableTags.push(tagList[k]);
+                    }
+                }
             }
-            if (commandList.includes(input[i])) {
+            
+            if (isCmd) {
                 runCommand(input[i]);
                 break;
             }
