@@ -234,16 +234,14 @@ function filterElements(requiredTags) {
             el.style.display = 'none';
         }
 
-        if (requiredTags.length == 0) {
-            el.style.order = 0;
-        } else if (el.style.display != "none") {
-            setOrder(el, requiredTags, el.dataset.tags)
-        }
+        
     });
-}
-
-
-function setOrder(el, requiredTags, tags) {
-    order = (tags.split(',').length - requiredTags.length)
-    el.style.order = (tags.split(',').length - requiredTags.length);
+    children = document.getElementById("content").children
+    for (var i = 0; i < children.length; i++) {
+        if (requiredTags.length == 0) {
+            children[i].style.order = 0;
+        } else if (children[i].style.display != "none") {
+            children[i].style.order = (children[i].dataset.tags.split(',').length - requiredTags.length);
+        }
+    };
 }
