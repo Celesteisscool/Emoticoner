@@ -234,10 +234,10 @@ function filterElements(requiredTags) {
             el.style.display = 'none';
         }
 
-        if (el.style.display != "none") {
+        if (requiredTags.length == 0) {
+            el.style.order = 0;
+        } else if (el.style.display != "none") {
             setOrder(el, requiredTags, el.dataset.tags)
-        } else if (requiredTags == [""]) {
-            el.style.order = -1;
         }
     });
 }
