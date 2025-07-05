@@ -52,6 +52,15 @@ function runTest() {
     for (let i = 0; i < emoticonCount; i++) {
         document.getElementById("content").children[i].click()
     }
+    for (let i = 0; i < tagList.length; i++) {
+        setSearch(tagList[i], true, true);
+        console.log("Testing tag: " + tagList[i]);
+    }
+
+    setSearch("dull brows nose confused wink", true, true);
+    console.log("Test complete!");
+          
+    
 }
 
 function addEmoticon(input, tags) {

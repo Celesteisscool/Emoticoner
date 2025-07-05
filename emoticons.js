@@ -160,7 +160,7 @@ function setupAllEmojis() {
     addEmoticon(">;3",  ["brows", "cat", "wink"]);
 
     addEmoticon("',:-|", ["dull", "brows", "nose", "confused"]);
-    addEmoticon("',:-l", ["dull", "brows", "nose", "confused"]);
+    addEmoticon("',;-|", ["dull", "brows", "nose", "confused", "wink"]);
     
     addEmoticon("><>", ["fish"]);
     addEmoticon("<><", ["fish"]);
