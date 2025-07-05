@@ -225,10 +225,25 @@ window.addEventListener('resize', resize());
 
 function filterElements(requiredTags) {
     document.querySelectorAll('[data-tags]').forEach(el => {
+
         const tags = el.dataset.tags.split(',').map(t => t.trim().toLowerCase());
+        
         el.style.display = requiredTags.every(tag => tags.includes(tag.toLowerCase())) ? '' : 'none';
+
         if ((tags.includes("help") || tags.includes("tags")) && requiredTags.length == 0) {
             el.style.display = 'none';
         }
+
+        if (el.style.display != "none") {
+            setOrder(el, requiredTags, el.dataset.tags)
+        } else if (requiredTags == [""]) {
+            el.style.order = -1;
+        }
     });
+}
+
+
+function setOrder(el, requiredTags, tags) {
+    order = (tags.split(',').length - requiredTags.length)
+    el.style.order = (tags.split(',').length - requiredTags.length);
 }
