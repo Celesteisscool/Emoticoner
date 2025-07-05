@@ -45,6 +45,7 @@ function start() {
     resize();
     filterElements([]);
     lastSearch = ""
+    updateOriginalOrder();
 }
 
 function runTest() {
@@ -223,25 +224,54 @@ function resize() {
 
 window.addEventListener('resize', resize());
 
+let originalOrder = [];
+
+function updateOriginalOrder() {
+    const content = document.getElementById("content");
+    originalOrder = Array.from(content.children);
+}
+
 function filterElements(requiredTags) {
-    document.querySelectorAll('[data-tags]').forEach(el => {
+    const content = document.getElementById("content");
+    const children = content.children;
+    // Hide parent to prevent repaints
+    content.style.display = "none";
 
+    // First pass: update display
+    Array.from(children).forEach(el => {
         const tags = el.dataset.tags.split(',').map(t => t.trim().toLowerCase());
-        
-        el.style.display = requiredTags.every(tag => tags.includes(tag.toLowerCase())) ? '' : 'none';
-
-        if ((tags.includes("help") || tags.includes("tags")) && requiredTags.length == 0) {
-            el.style.display = 'none';
+        let shouldShow = requiredTags.every(tag => tags.includes(tag.toLowerCase()));
+        if ((tags.includes("help") || tags.includes("tags")) && requiredTags.length === 0) {
+            shouldShow = false;
         }
-
-        
+        if (el.style.display !== (shouldShow ? "" : "none")) {
+            el.style.display = shouldShow ? "" : "none";
+        }
     });
-    children = document.getElementById("content").children
-    for (var i = 0; i < children.length; i++) {
-        if (requiredTags.length == 0) {
-            children[i].style.order = 0;
-        } else if (children[i].style.display != "none") {
-            children[i].style.order = (children[i].dataset.tags.split(',').length - requiredTags.length);
-        }
-    };
+
+    // Second pass: update order
+    if (requiredTags.length > 0) {
+        // Collect visible elements and their order value
+        const visible = Array.from(children)
+            .filter(el => el.style.display !== "none")
+            .map(el => ({
+                el,
+                orderVal: el.dataset.tags.split(',').length - requiredTags.length
+            }));
+        
+        // Sort by orderVal
+        visible.sort((a, b) => a.orderVal - b.orderVal);
+        
+        // Re-append in sorted order
+        visible.forEach(({el}) => content.appendChild(el));
+    }
+
+    // Show parent again
+    if (requiredTags.length === 0) {
+        // Reset to original order if no tags are required
+        originalOrder.forEach(el => content.appendChild(el));
+    }
+    
+    content.style.display = "flex";
+    
 }
