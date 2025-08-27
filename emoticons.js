@@ -232,5 +232,22 @@ function setupAllEmojis() {
     addEmoticon("ඞා", ["sus"]);
     addEmoticon("𐐘", ["sus"]);
 
-
+    // Other
+    addEmoticon("(¬_¬)", ["dull", "brows"]);
+    addEmoticon("(* ^ ω ^)", ["happy", "blush"]);
+    addEmoticon("(╥﹏╥)", ["sad", "blush"]);
+    addEmoticon("(>_<)", ["angry", "sad"]);
+    addEmoticon("(•_•)", ["dull"]);
+    addEmoticon("(✿◠‿◠)", ["happy", "blush"]);
+    addEmoticon("(ʘ‿ʘ)", ["shocked", "happy"]); 
+    addEmoticon("(☞ﾟヮﾟ)☞", ["happy"]);
+    addEmoticon("(ノಠ益ಠ)ノ", ["angry", "brows"]);
+    addEmoticon("(づ｡◕‿‿◕｡)づ", ["happy", "blush"]);
+    addEmoticon("(⊙_☉)", ["shocked", "confused"]);
+    addEmoticon("(¬‿¬)", ["silly", "brows"]);
+    addEmoticon("(╯︵╰,)", ["sad"]);
+    addEmoticon("(✧ω✧)", ["happy", "cat"]);
+    addEmoticon("(ಥ﹏ಥ)", ["sad", "blush"]);
+    addEmoticon("(ʕ•ᴥ•ʔ)", ["happy"]);
+    addEmoticon("(ง'̀-'́)ง", ["angry"]);
 }
