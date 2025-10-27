@@ -16,7 +16,8 @@ tagList = [
     "o",
     "blush",
     "sus",
-    "angry"
+    "angry",
+    "cheeky"
 ];
 
 function setupAllEmojis() {
@@ -250,4 +251,12 @@ function setupAllEmojis() {
     addEmoticon("(ಥ﹏ಥ)", ["sad", "blush"]);
     addEmoticon("(ʕ•ᴥ•ʔ)", ["happy"]);
     addEmoticon("(ง'̀-'́)ง", ["angry"]);
+    
+    // Requested
+    addEmoticon(":T", ["cheeky"])
+    addEmoticon(":V", ["cheeky"])
+    addEmoticon(":1", ["cheeky"])
+    addEmoticon(":[]", ["dull"])
+    addEmoticon(":B", ["cat"])
+
 }
