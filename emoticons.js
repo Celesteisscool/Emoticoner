@@ -17,7 +17,8 @@ tagList = [
     "blush",
     "sus",
     "angry",
-    "cheeky"
+    "cheeky",
+    "heart"
 ];
 
 function setupAllEmojis() {
@@ -253,10 +254,13 @@ function setupAllEmojis() {
     addEmoticon("(ง'̀-'́)ง", ["angry"]);
     
     // Requested
-    addEmoticon(":T", ["cheeky"])
-    addEmoticon(":V", ["cheeky"])
-    addEmoticon(":1", ["cheeky"])
-    addEmoticon(":[]", ["dull"])
-    addEmoticon(":B", ["cat"])
-
+    addEmoticon(":T", ["cheeky"]);
+    addEmoticon(":V", ["cheeky"]);
+    addEmoticon(":1", ["cheeky"]);
+    addEmoticon(":[]", ["dull"]);
+    addEmoticon(":B", ["cat"]);
+    
+    addEmoticon("<3", ["heart"]);
+    addEmoticon("<$", ["heart"]);
+    addEmoticon("</3", ["heart"])
 }
