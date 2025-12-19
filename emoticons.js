@@ -17,6 +17,8 @@ tagList = [
     "blush",
     "sus",
     "angry",
+    "cheeky",
+    "heart",
     "peggy"
 ];
 
@@ -233,5 +235,5 @@ function setupAllEmojis() {
     addEmoticon("ඞා", ["sus"]);
     addEmoticon("𐐘", ["sus"]);
 
-    addPeggy();
+
 }
