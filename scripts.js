@@ -62,13 +62,56 @@ function runTest() {
           
     
 }
+const peggy = `
+                        .       .
+                       / \`.   .' \\
+               .---.  <    > <    >  .---.
+               |    \\  \\ - ~ ~ - /  /    |
+                ~-..-~             ~-..-~
+            \\~~~\\.'                    \`./~~~/
+             \\__/                        \\__/
+              /                  .-    .  \\
+       _._ _.-    .-~ ~-.       /       }   \\/~~~/
+   _.-'q  }~     /       }     {        ;    \\__/
+  {'__,  /      (       /      {       /      \`. ,~~|   .     .
+   \`''''='~~-.__(      /_      |      /- _      \`..-'   \\\\   //
+               / \\   =/  ~~--~~{    ./|    ~-.     \`-..__\\\\_//_.-'
+              {   \\  +\\         \\  =\\ (        ~ - . _ _ _..---~
+              |  | {   }         \\   \\_\\
+             '---.o___,'       .o___,'
+`;
+
+function addPeggy() {
+    tags = ["peggy"]
+    hovertags = tags.toString().replace(/,/g, ",&nbsp;")
+    elem = "<button class=\"emoticon\" data-tags=" + tags + " title=" + hovertags + " onclick=\"copyPeggy()\">Peggy (too FAT to fit)</button>"
+    document.getElementById("content").insertAdjacentHTML("beforeend", elem);
+    emoticonElemList[peggy] = document.getElementById("content").lastChild; 
+
+    emoticonCount += 1;
+    
+}
+
+function copyPeggy() {
+    
+    try {   
+        navigator.clipboard.writeText(peggy).then(
+            () => {
+                console.log("Yay it worked! Yoinked " + peggy + " to the clipboard");
+            },
+
+        );
+    }
+    catch (e) {
+
+    }
+}
 
 function addEmoticon(input, tags) {
     input = sanitize(input)
     copyin = input
     copyin = copyin.replace("\\", "\\\\")
     copyin = copyin.replace("&#x27;", "\\\'")
-    
     hovertags = tags.toString().replace(/,/g, ",&nbsp;")
 
     elem = "<button class=\"emoticon\" data-tags=" + tags + " title=" + hovertags + " onclick=\"copybutton(\'" + (copyin) + "\')\">" + input + "</button>"
@@ -132,8 +175,8 @@ function setupHelpText() {
 
 function copybutton(input) {
     if (input != "") {
-
         try {
+            
             navigator.clipboard.writeText(input).then(
                 () => {
                     console.log("Yay it worked! Yoinked " + input + " to the clipboard");

@@ -16,7 +16,8 @@ tagList = [
     "o",
     "blush",
     "sus",
-    "angry"
+    "angry",
+    "peggy"
 ];
 
 function setupAllEmojis() {
@@ -203,11 +204,11 @@ function setupAllEmojis() {
 
     addEmoticon("ฅ(^•ﻌ•^ฅ)", ["cat"]);
 
-    addEmoticon("ヽ(`Д´)ﾉ", ["angry", "brows"])
+    addEmoticon("ヽ(\`Д´)ﾉ", ["angry", "brows"])
     addEmoticon("(＃ﾟДﾟ)",  ["angry"])
     addEmoticon("（´∀｀）",  ["happy"])
     addEmoticon("Σ(゜д゜;)",  ["shocked"])
-    addEmoticon("ヽ(´▽`)/",  ["happy"])
+    addEmoticon("ヽ(´▽\`)/",  ["happy"])
     addEmoticon("^ㅂ^",  ["happy"])
     
     // Emojidb
@@ -232,5 +233,5 @@ function setupAllEmojis() {
     addEmoticon("ඞා", ["sus"]);
     addEmoticon("𐐘", ["sus"]);
 
-
+    addPeggy();
 }
