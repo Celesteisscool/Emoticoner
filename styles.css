@@ -24,9 +24,25 @@ canvas {
 body {
     background-color: var(--background);
     color: var(--text);
-    transition: all 1s ease-in-out;
 
     font-family: 'Courier New', Courier, monospace;
+}
+
+.giveMeSomeSpace {
+    padding-bottom: 20px;
+}
+
+.sticky {
+    /* fixed at top but leave space in flow via content padding */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    z-index: 1000;
+    background: linear-gradient(to bottom, var(--background) 0%, transparent 100%);
 }
 
 .header {
@@ -40,11 +56,12 @@ body {
     text-align: center;
     color: var(--sub);
     padding-top: 0px;
-    transition: color 1s ease-in-out;
 }
 
 #content {
     flex-wrap: wrap;
+    margin-top: 75px;
+
 }
 
 div#content {
@@ -55,6 +72,7 @@ div#content {
     margin: auto;
     display: flex;
     padding-top: 0px;
+    
 }
 
 .search input[type=text] {
@@ -65,7 +83,6 @@ div#content {
     background-color: var(--background);
     color: var(--text);
 
-    transition: all 1s ease-in-out;
 
 
     font-size: 17px;
@@ -77,6 +94,7 @@ div#content {
     margin: 100vh;
     display: flex;
     flex-wrap: wrap;
+    padding-top: var(--sticky-height);
 }
 
 .emoticon {
@@ -93,16 +111,12 @@ div#content {
     border-color: var(--active);
     color: var(--text);
     background-color: var(--background);
-
-    transition: all 1s ease-in-out;
 }
 
 .emoticon:hover {
-    transition: border-color 0.125s ease-in-out;
     border-color: var(--text);
 }
 
 .emoticon:active {
-    transition: border-color 0.125s ease-in-out;
     border-color: var(--active);
 }
