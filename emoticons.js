@@ -181,12 +181,14 @@ function setupAllEmojis() {
     addEmoticon(";-;", ["sad"]);
     addEmoticon("T_T", ["sad"]);
     addEmoticon("T-T", ["sad"]);
+    addEmoticon("T^T", ["sad"]);
     addEmoticon("Q-Q", ["sad"]);
     addEmoticon("Q-q", ["sad"]);
     addEmoticon("q-q", ["sad"]);
 
     addEmoticon("X_X", ["dead"]);
     addEmoticon("x_x", ["dead"]);
+    addEmoticon("x^x", ["dead"]);
     addEmoticon("+_+", ["dead"]);
     addEmoticon("X_x", ["dead"]);
     addEmoticon("x_X", ["dead"]);
